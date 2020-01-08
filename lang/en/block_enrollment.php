@@ -1,6 +1,7 @@
 <?php
 
 $string['pluginname'] = 'Quick Enrol';
+$string['emptyuserid'] = 'You must select at least one user';
 $string['enrollment'] = 'Quick Enrol';
 $string['notallowed'] = 'Access Denied';
 $string['submit'] = 'Submit';
@@ -8,7 +9,7 @@ $string['description'] = 'You can enrol a user in multiple courses. Choose a use
 
 $string['users'] = 'Select user';
 $string['roles'] = 'Assign role';
-$string['courses'] = 'Choose course';
+$string['courses'] = 'Choose courses';
 $string['selectmultiple']= 'hold down CTRL to select multiple courses';
 
 $string['enrolusers'] = 'Enrol user in courses';
@@ -28,3 +29,4 @@ $string['enddate'] = 'Enrolment end date';
 $string['enddateleaveblank'] = 'leave blank for no end date';
 $string['dateerror'] = 'The end date needs to be greater than the start date';
 $string['nomanenrol'] = 'Can not instantiate enrol_manual. Manual enrolment appears to be disabled.';
+$string['userenrolled'] = 'User enrolled successfully.';
