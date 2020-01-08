@@ -25,14 +25,15 @@ if ($data = $form->get_data()) {
     }
     foreach ($data->courses as $course) {
         $instance = $DB->get_record('enrol', array('enrol' => 'manual', 'courseid' => $course));
-        $enrol_manual->enrol_user($instance, $data->userid, $data->roletoassign, $data->datestart, $data->dateend);
+        foreach ($data->userids as $userid) {
+            $enrol_manual->enrol_user($instance, $userid, $data->roletoassign, $data->datestart, $data->dateend);
+        }
     }
     redirect($url, get_string('userenrolled', 'block_enrollment'));
 }
 echo $OUTPUT->header();
-echo get_string('description', 'block_enrollment');
+echo html_writer::tag('p', get_string('description', 'block_enrollment'));
 
-//echo $OUTPUT->render($notification);
 $form->display();
 
 echo $OUTPUT->footer();

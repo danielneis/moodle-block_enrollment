@@ -5,7 +5,7 @@ $string['emptyuserid'] = 'You must select at least one user';
 $string['enrollment'] = 'Quick Enrol';
 $string['notallowed'] = 'Access Denied';
 $string['submit'] = 'Submit';
-$string['description'] = 'You can enrol a user in multiple courses. Choose a user, choose their role, and choose 1 or more courses for them to be enrolled in. The start date defaults to today. You can set an end date for them to be automatically un-enrolled on, or leave it blank so they will never be un-enrolled.';
+$string['description'] = 'You can enrol multiple users in multiple courses.<br/>Choose the users, the courses and the role for them to be enrolled in.<br/> The start date defaults to today. You can set an end date for them to be automatically un-enrolled on, or leave it blank so they will never be un-enrolled.';
 
 $string['users'] = 'Select user';
 $string['roles'] = 'Assign role';

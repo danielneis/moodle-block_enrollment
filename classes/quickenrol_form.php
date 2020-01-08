@@ -59,16 +59,15 @@ class quickenrol_form extends \moodleform {
             }
         }
 
-        $mform->addElement('header', 'main', get_string('enrolmentoptions', 'enrol'));
         $options = array(
             'ajax' => 'enrol_manual/form-potential-user-selector',
-            'multiple' => false,
+            'multiple' => true,
             'courseid' => $course->id,
             'enrolid' => $instance->id,
             'userfields' => implode(',', get_extra_user_fields($context))
         );
-        $mform->addElement('autocomplete', 'userid', get_string('selectusers', 'enrol_manual'), array(), $options);
-        $mform->addRule('userid', null, 'required', null, 'client');
+        $mform->addElement('autocomplete', 'userids', get_string('selectusers', 'enrol_manual'), array(), $options);
+        $mform->addRule('userids', null, 'required', null, 'client');
 
         $mform->addElement('course', 'courses', get_string('courses', 'block_enrollment'), ['multiple' => true]);
         $mform->addRule('courses', null, 'required', null, 'client');
@@ -87,8 +86,8 @@ class quickenrol_form extends \moodleform {
        if (!empty($data['datestart']) && !empty($data['dateend']) && ($data['datestart'] >= $data['dateend'])) {
            $errors['datestart'] = get_string('wrongdatestart', 'block_enrollment');
        }
-       if (empty($data['userid'])) {
-           $errors['userid'] = get_string('emptyuserid', 'block_enrollment');
+       if (empty($data['userids'])) {
+           $errors['userids'] = get_string('emptyuserid', 'block_enrollment');
        }
        return $errors;
     }
